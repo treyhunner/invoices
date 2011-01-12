@@ -1,0 +1,34 @@
+\documentclass{invoice}
+
+\def \tab {\hspace*{3ex}}
+
+\begin{document}
+
+\hfil{\Huge\bf Joe Shmoe}\hfil
+\bigskip\break
+\hrule
+5555 Front St. \hfill 555~.~356~.~7936 \\
+Toledo, OH 43602 \hfill shmoe@example.com
+\\ \\
+{\bf Invoice To:} \\
+\tab John Doe \\
+\tab ACME Corporation \\
+
+{\bf Date:} \\
+\tab \today \\
+
+\hourlyrate{12.51}
+
+\begin{invoiceTable}
+\feetype{Consulting Services}
+\hourrow{January 3, 2011}{8}
+\hourrow{January 4, 2011}{6.5}
+\hourrow{January 5, 2011}{5.25}
+\hourrow{January 6, 2011}{9.75}
+\hourrow{January 7, 2011}{4}
+\subtotal
+\feetype{Hosting Expenses}
+\feerow{Ajax Hosting: January 8, 2011}{60}
+\end{invoiceTable}
+
+\end{document}
