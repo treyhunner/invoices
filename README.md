@@ -9,6 +9,3 @@ The class currently supports:
 * Fixed fees and expenses
 * Totaling of hours, units, and dollar amounts
 * Subtotal sectioning
-
-## 
-All enclosed files are licensed under the MITLicense.
