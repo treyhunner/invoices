@@ -46,8 +46,8 @@
 }
 
 % Counters for totaling up hours and dollars
-\newcounter{hours} \newcounter{cost} \newcounter{subcost}
-\setcounter{hours}{0} \setcounter{cost}{0} \setcounter{subcost}{0}
+\newcounter{hours} \newcounter{subhours} \newcounter{cost} \newcounter{subcost}
+\setcounter{hours}{0} \setcounter{subhours}{0} \setcounter{cost}{0} \setcounter{subcost}{0}
 
 % Formats inputed number with 2 digits after the decimal place
 \newcommand*{\formatNumber}[1]{\FPround{\cost}{#1}{2}\cost} %
@@ -73,8 +73,9 @@
     }
 
     \newcommand{\subtotalNoStar}{
-        {\bf Subtotal} & {\bf \total{hours} hours} &  & {\bf \$\total{subcost}}
+        {\bf Subtotal} & {\bf \total{subhours} hours} &  & {\bf \$\total{subcost}}
         \setcounter{subcost}{0}
+        \setcounter{subhours}{0}
         \\*[1.5ex]
     }
     \newcommand{\subtotalStar}{
@@ -93,6 +94,7 @@
     % Create a new row from date and hours worked (use stored fee type and hourly rate)
     \newcommand*{\hourrow}[2]{%
         \addtocounter{hours}{1000 * \real{##2}}%
+        \addtocounter{subhours}{1000 * \real{##2}}%
         \unitrow{##1}{##2}{\@hourlyrate}{hours}%
     }
     \renewcommand{\tabcolsep}{0.8ex}
